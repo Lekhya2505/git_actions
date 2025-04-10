@@ -1,0 +1,57 @@
+: Compile and Run
+In your terminal:
+
+bash
+Copy
+Edit
+javac DockerAssessment.java
+java DockerAssessment
+Take a screenshot of the successful compilation and output.
+
+✅ Step 3: Create a Dockerfile
+Create a file named Dockerfile in the same folder with the following content:
+
+Dockerfile
+Copy
+Edit
+# Use the official Java base image
+FROM openjdk:17
+
+# Set working directory
+WORKDIR /app
+
+# Copy source files into container
+COPY DockerAssessment.java .
+
+# Compile the Java file
+RUN javac DockerAssessment.java
+
+# Command to run the Java program
+CMD ["java", "DockerAssessment"]
+Take a screenshot of this Dockerfile for your report.
+
+✅ Step 4: Build Docker Image
+Run the following command in the same directory as the Dockerfile:
+
+bash
+Copy
+Edit
+docker build -t DockerAssessment:22MIC0074 .
+Take a screenshot of the successful image build output.
+
+✅ Step 5: Check Docker Images
+To verify that your image is created:
+
+bash
+Copy
+Edit
+docker images
+Look for DockerAssessment with tag 22MIC0074. Take a screenshot.
+
+✅ Step 6: Run the Docker Container
+Run the image:
+
+bash
+Copy
+Edit
+docker run DockerAssessment:22MIC0074
